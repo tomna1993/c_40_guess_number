@@ -2,11 +2,35 @@
 
 ## DESCRIPTION
 
-In this program I implemented a simple guessing game. The user sets a range within he wants to guess the number, then he has 5 guesses to find the number. The program generates a random number between 0 and a number the user set at start.
+In this program I implemented a simple guessing game. The player sets a range within he wants to guess the number, then he has 5 tries to find the number. The program generates a random number between 0 and a number the user set at start as a command-line argument.
+
+Here are a few examples of how the program should work. For example, if the user omits a command line argument entirely:
+
+```bash
+./guess_number
+Usage: ./guess_number range_size
+```
+
+If the user instead does provide a command-line argument, but it’s not in the correct range:
+
+```bash
+./guess_number 0
+Error: range_size must be between 0 and 30000! 
+```
+
+If the user does provide a command-line argument, but it’s not a number:
+
+```bash
+./guess_number ten
+Error: range_size must be a number! 
+```
+
+
+
 
 ### SPECIFICATION
 
-- Get a range from the user as a command line argument, the number must be a positive integer number
+- The program should accept a single command-line argument. If the program was not run with a single command-line argument, you should print an error message as demonstrated above and `return 1`, ending the program.
 - If the command line argument is not a number print an error message
 - If the player doesn't give a command line argument print an error how to start the program
 - Convert the command line argument `string` to `integer` number
@@ -20,15 +44,16 @@ In this program I implemented a simple guessing game. The user sets a range with
 
 ```bash
 ./guess_number 10
-Guess a number between 0 and 10. Are you ready?
-Your first guess: 5
-The number is < then 5
-Your second guess: 3
-The number is < then 3
-Your third guess: 1
-The number is > then 1
-Your fourth guess: 2
-****** You win! ******
+Welcome in the guessing game!
+You have 5 tries to guess a number between 0 and 10. Are you ready?
+Input a number: 5
+Your 1. guess is bigger! 
+Input a number: 3
+Your 2. guess is bigger!
+Input a number: 1
+Your 3. guess is smaller!
+Input a number: 2
+****** You Win! ******
 
 ./guess_number 100
 Guess a number between 0 and 10. Are you ready?
