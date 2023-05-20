@@ -54,7 +54,7 @@ int main(int argc, string argv[])
 	// printf("max_rand_num: %i\n", max_rand_num_int);
 
 	// Print range to inform the user 
-	printf(GREEN "Welcome in the guessing game!\n" RESET);
+	printf(GREEN "Welcome in the guessing game!" RESET "\n");
 	printf("You have 5 tries to guess a number between 0 and %i. Are you ready?\n", max_rand_num_int);
 
 	// Generate rundom number with standard c library and rand() function
@@ -73,11 +73,11 @@ int main(int argc, string argv[])
 	// Print "You win!" or "Game Over!"
 	if(game_result)
 	{
-		printf(GREEN "****** You Win! ******\n" RESET);
+		printf(GREEN "****** You Win! ******" RESET "\n");
 	}
 	else
 	{
-		printf(RED "****** Game Over! ******\n" RESET);
+		printf(RED "****** Game Over! ******" RESET "\n");
 	}
 }
 
