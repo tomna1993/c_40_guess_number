@@ -44,35 +44,6 @@ And when player lose:
 - Check if the player inputs correct type of number, if his input contains other types than a number, ask for a new guess.
 - When the player wins print "You win!" with green background, if looses print "Game Over!" with red background.
 
-### EXAMPLES
-
-```bash
-./guess_number 10
-Welcome in the guessing game!
-You have 5 tries to guess a number between 0 and 10. Are you ready?
-Input a number: 5
-Your 1. guess is bigger! 
-Input a number: 3
-Your 2. guess is bigger!
-Input a number: 1
-Your 3. guess is smaller!
-Input a number: 2
-****** You Win! ******
-
-./guess_number 100
-Guess a number between 0 and 10. Are you ready?
-Your first guess: 50
-The number is < then 50
-Your second guess: 13
-The number is > then 13
-Your third guess: 38
-The number is > then 38
-Your fourth guess: 45
-The number is < then 45
-Your fifth guess: 40
-****** Game Over! ******
-```
-
 ## INSTALL LIBRARIES
 
 The source code uses the cs50 library what you can download [HERE](https://github.com/cs50/libcs50).
