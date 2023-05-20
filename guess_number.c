@@ -14,6 +14,8 @@
 // define reset to clear styling and color modes 
 #define RESET "\033[0m"
 
+#define MAX_NUMBER_RANGE 30000
+
 int convert_str_int(string number_string);
 long int random_number(long int seed);
 bool guess_number_game(int number_to_guess);
@@ -24,7 +26,7 @@ int main(int argc, string argv[])
 	// single command-line argument, print error and return 1
 	if(argc != 2)
 	{
-		printf("Usage: ./guess_number max_rand_num\n");
+		printf("Usage: ./guess_number range_size\n");
 		return 1;
 	}
 
@@ -41,7 +43,7 @@ int main(int argc, string argv[])
 
 		if(isalpha(max_rand_num_string[i]))	
 		{
-			printf("The given max_rand_num is not a number!\n");
+			printf("Error: range_size must be a number!\n");
 			return 1;
 		}
 	}
@@ -52,6 +54,12 @@ int main(int argc, string argv[])
 
 	// Debug convert_str_int function
 	// printf("max_rand_num: %i\n", max_rand_num_int);
+
+	if(max_rand_num_int > MAX_NUMBER_RANGE)
+	{
+		printf("Error: range_size must be between 0 and %i!\n", MAX_NUMBER_RANGE);
+		return 1;
+	}
 
 	// Print range to inform the user 
 	printf(GREEN "Welcome in the guessing game!" RESET "\n");
@@ -65,7 +73,7 @@ int main(int argc, string argv[])
 	const int random_number_int = random_number(time(NULL)) % (max_rand_num_int + 1);
 
 	// Debug generated random number
-	printf("Random number: %i\n", random_number_int);
+	// printf("Random number: %i\n", random_number_int);
 
 	// Start the game, guess_number_game returns true if player wins 
 	bool game_result = guess_number_game(random_number_int);
