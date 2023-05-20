@@ -11,7 +11,7 @@
 // define red background with white letters
 #define RED "\033[38;2;255;255;255m \033[48;2;197;15;31m"
 
-// define reset to clear terminal formatting
+// define reset to clear styling and color modes 
 #define RESET "\033[0m"
 
 int convert_str_int(string number_string);
