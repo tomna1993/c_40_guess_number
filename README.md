@@ -4,41 +4,45 @@
 
 In this program I implemented a simple guessing game. The player sets a range within he wants to guess the number, then he has 5 tries to find the number. The program generates a random number between 0 and a number the user set at start as a command-line argument.
 
-Here are a few examples of how the program should work. For example, if the user omits a command line argument entirely:
+Here are a few examples of how the program should work. For example, if the player omits a command-line argument entirely:
 
 ```bash
 ./guess_number
 Usage: ./guess_number range_size
 ```
 
-If the user instead does provide a command-line argument, but it’s not in the correct range:
+If the player instead does provide a command-line argument, but it’s not in the correct range:
 
 ```bash
 ./guess_number 0
 Error: range_size must be between 0 and 30000! 
 ```
 
-If the user does provide a command-line argument, but it’s not a number:
+If the player does provide a command-line argument, but it’s not a number:
 
 ```bash
 ./guess_number ten
 Error: range_size must be a number! 
 ```
 
+Here is an example when the player wins the game:
 
+![win](./image/win.PNG)
 
+And when player lose:
+
+![lose](./image/lose.PNG)
 
 ### SPECIFICATION
 
 - The program should accept a single command-line argument. If the program was not run with a single command-line argument, you should print an error message as demonstrated above and `return 1`, ending the program.
-- If the command line argument is not a number print an error message
-- If the player doesn't give a command line argument print an error how to start the program
-- Convert the command line argument `string` to `integer` number
-- Print out the range within the player can guess
-- The player can have five guesses within he must find the number, otherwise he looses
-- Help the player if the number he guessed is higher or lower than the generated number
-- Check if the player inputs correct type of number, if his input contains other types then a number, ask for a new guess
-- When the player wins print "You win!" with green background, if looses print "Game Over!" with red background
+- If the command-line argument is not a number print an error message, and `return 1`.
+- Convert the command-line argument `string` to `integer` number.
+- Print out the range within the player can guess.
+- The player can have five guesses within he must find the number, otherwise he loses.
+- Help the player if the number he guessed is higher or lower than the generated number.
+- Check if the player inputs correct type of number, if his input contains other types than a number, ask for a new guess.
+- When the player wins print "You win!" with green background, if looses print "Game Over!" with red background.
 
 ### EXAMPLES
 
