@@ -1,7 +1,11 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
+#include <time.h>
+
+int convert_str_int(string number_string);
 
 int main(int argc, string argv[])
 {
@@ -33,25 +37,43 @@ int main(int argc, string argv[])
 
 	// Convert argument from string to int, 
 	// If it is equal to 0, bigger then 30000 or not a number return 1
-	int max_rand_num = convert_str_int(argv[1]);
+	const int max_rand_num_int = convert_str_int(max_rand_num_string);
+
+	// Debug convert_str_int function
+	// printf("max_rand_num: %i\n", max_rand_num_int);
 
 	// Print range to inform the user 
+	printf("Welcome in the guessing game!\n");
+	printf("You have 5 tries to guess a number between 0 and %i. Are you ready?\n", max_rand_num_int);
 
 	// Generate a random number 
+	srand(time(NULL));
+	
+	int random_number_int = rand() % (max_rand_num_int + 1);
+
+	// Debug generated random number
+	printf("Random number: %i\n", random_number_int);
 
 	// Start the game
 
 	// Print "You win!" or "Game Over!"
 }
 
+// Convert string number to integer
 int convert_str_int(string number_string)
 {
 	int number_int = 0;
+
+	int power_of_ten = 1;
 
 	for(int i = strlen(number_string); i > 0;)
 	{
 		i--; 
 
-		number_int += number_string[i] - 48;
+		number_int += (number_string[i] - 48) * power_of_ten;
+	
+		power_of_ten *= 10;
 	}
+
+	return number_int;
 }
